@@ -66,7 +66,8 @@ shinyServer(function(input,output){
       theme(legend.position = "none",axis.text = element_text(size = 12),
             axis.title = element_text(size = 18),
             legend.text = element_text(size =12),
-            legend.title = element_text(size= 18))+
+            legend.title = element_text(size= 18),
+            strip.text = element_text(size = 18))+
       geom_abline(slope=0,intercept =0,linetype =2)+
       ylab("normalized counts")+    
       geom_vline(xintercept = binding,linetype = 2)+

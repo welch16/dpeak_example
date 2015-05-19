@@ -6,6 +6,8 @@ library(data.table)
 library(ggplot2)
 library(RColorBrewer)
 library(GenomicRanges)
+library(grid)
+library(gridExtra)
 
 
 rf = colorRampPalette(rev(brewer.pal(11,'Spectral')))

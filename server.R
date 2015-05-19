@@ -4,10 +4,8 @@ source("simulation.R")
 
 library(data.table)
 library(ggplot2)
-library(reshape2)
 library(RColorBrewer)
 library(GenomicRanges)
-library(gridExtra)
 
 
 rf = colorRampPalette(rev(brewer.pal(11,'Spectral')))

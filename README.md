@@ -13,11 +13,9 @@ To run this example, it is necessary to do:
 shiny::runGithub("dpeak_example","welch16")
 ```
 
-The actual code to use dpeak is in:
-
-[dpeak code](https://github.com/dongjunchung/dpeak)
-
-and the paper is in [here](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003246)
+The code to use dpeak is in
+[here](https://github.com/dongjunchung/dpeak) and the paper is in
+[here](http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003246)
 
 
 

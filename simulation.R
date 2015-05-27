@@ -61,3 +61,19 @@ fragment_length_cover<- function(fl,gr,S)
   dt[,fragLen:=fl]
   return(dt)
 }
+
+
+
+
+forward_strand_ratio <- function(fl,gr,S)
+{
+  gr = resize(gr,fl)
+  gr_fwd = coverage(subset(gr,strand == "+"))[[1]]
+  gr_bwd = coverage(subset(gr,strand == "-"))[[1]]
+  fwd = step_fun(gr_fwd,S)
+  bwd = step_fun(gr_bwd,S)
+  z = fwd + bwd
+  out = ifelse(z == 0 , NA , fwd /z)
+  dt = data.table(position = 1:S,fsr = out, fragLen = fl)
+  return(dt)    
+}

@@ -116,7 +116,7 @@ shinyServer(function(input,output){
       x = input$fl
 
       p2 = ggplot(mat,aes(position,fragLen,fill=fsr))+geom_tile()+
-        scale_fill_gradient2(name="Strand imbalance",midpoint=.5)+
+        scale_fill_gradient2(name="Fwd. strand ratio",midpoint=.5)+
         theme(legend.position = "bottom",axis.text = element_text(size = 12),
               axis.title = element_text(size = 18),
               legend.text = element_text(size =12),

@@ -20,10 +20,10 @@ shinyUI(
                    actionButton("simulate","Update"),            
                    plotOutput("peakMat")
                    ),
-          tabPanel("Strand imbalance",
-                   actionButton("calc_fsr","Update"),
-                   plotOutput("strandRatio")
-                   ),
+          ## tabPanel("Strand imbalance",
+          ##          actionButton("calc_fsr","Update"),
+          ##          plotOutput("strandRatio")
+          ##          ),
           tabPanel("Reads",verbatimTextOutput("printReads"))
                   )
                 )

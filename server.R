@@ -104,32 +104,32 @@ shinyServer(function(input,output){
           
   },width = 800,height = 680)
   
-  output$strandRatio <- renderPlot({
+  ## output$strandRatio <- renderPlot({
 
-    input$calc_fwd
+  ##   input$calc_fwd
 
-    isolate({
-      fr = 25:300
-      mat = do.call(rbind,mclapply(fr,forward_strand_ratio,reads(),input$S,mc.cores = mc))
+  ##   isolate({
+  ##     fr = 25:300
+  ##     mat = do.call(rbind,mclapply(fr,forward_strand_ratio,reads(),input$S,mc.cores = mc))
 
-      m = as.numeric(strsplit(input$text_m,";")[[1]])
-      x = input$fl
+  ##     m = as.numeric(strsplit(input$text_m,";")[[1]])
+  ##     x = input$fl
 
-      p2 = ggplot(mat,aes(position,fragLen,fill=fsr))+geom_tile()+
-        scale_fill_gradient2(name="Fwd. strand ratio",midpoint=.5)+
-        theme(legend.position = "bottom",axis.text = element_text(size = 12),
-              axis.title = element_text(size = 18),
-              legend.text = element_text(size =12),
-              legend.title = element_text(size= 18)
-              )+        
-        geom_vline(xintercept=m,linetype=2)+ylab("Fragment length")+
-        geom_abline(slope=0,intercept = x,colour = "grey",linetype = 3)+
-        guides(fill = guide_colorbar(barwidth = unit(400,'points'),
-                 barheight = unit(35,'points')))
-        print(p2)
-    })
+  ##     p2 = ggplot(mat,aes(position,fragLen,fill=fsr))+geom_tile()+
+  ##       scale_fill_gradient2(name="Fwd. strand ratio",midpoint=.5)+
+  ##       theme(legend.position = "bottom",axis.text = element_text(size = 12),
+  ##             axis.title = element_text(size = 18),
+  ##             legend.text = element_text(size =12),
+  ##             legend.title = element_text(size= 18)
+  ##             )+        
+  ##       geom_vline(xintercept=m,linetype=2)+ylab("Fragment length")+
+  ##       geom_abline(slope=0,intercept = x,colour = "grey",linetype = 3)+
+  ##       guides(fill = guide_colorbar(barwidth = unit(400,'points'),
+  ##                barheight = unit(35,'points')))
+  ##       print(p2)
+  ##   })
 
-  },width = 800,height = 680)
+  ## },width = 800,height = 680)
 
   
 })
